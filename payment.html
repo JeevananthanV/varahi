@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Varahi Temple - Donation Page</title>
+    <link
+      rel="shortcut icon"
+      href="./assets/img/varahi.png"
+      type="image/x-icon"
+    />
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f5f1e8;
+        margin: 0;
+        padding: 0;
+        color: #333;
+      }
+      .donation-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+      .donation-header {
+        text-align: center;
+        padding: 20px 0;
+        border-bottom: 2px solid #ff9933;
+      }
+      .donation-header h1 {
+        color: #8b2131;
+        margin: 0;
+      }
+      .donation-header p {
+        color: #5d4037;
+        margin: 10px 0 0;
+      }
+      .donation-form-wrapper {
+        background-color: #ffffff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 30px;
+      }
+      .donation-field {
+        margin-bottom: 20px;
+      }
+      .donation-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: bold;
+        color: #5d4037;
+      }
+      .donation-input[type="text"],
+      .donation-input[type="email"],
+      .donation-input[type="tel"],
+      .donation-input[type="number"] {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+      }
+      .donation-button {
+        background-color: #ff9933;
+        color: white;
+        border: none;
+        padding: 14px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: bold;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+      .donation-button:hover {
+        background-color: #e88a2a;
+      }
+      .donation-button:disabled {
+        background-color: #cccccc;
+        cursor: not-allowed;
+      }
+      .donation-response {
+        display: none;
+        padding: 15px;
+        border-radius: 4px;
+        margin-top: 20px;
+        text-align: center;
+      }
+      .donation-response.success {
+        display: block;
+        background-color: #d4edda;
+        color: #155724;
+      }
+      .donation-response.error {
+        display: block;
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+      .temple-image-wrapper {
+        text-align: center;
+        margin: 20px 0;
+      }
+    </style>
+    <!-- partial:partial/__stylesheets.html -->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick-theme.css" />
+    <link rel="stylesheet" href="assets/css/plugins/ion.rangeSlider.min.css" />
+    <script
+      src="https://kit.fontawesome.com/9d0642729c.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="assets/css/plugins/font-awesome.min.css" />
+    <!-- Template Style sheet -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+  </head>
+  <body>
+    <div class="donation-container">
+      <div class="donation-header">
+        <h1>Sri Varahi Temple</h1>
+        <p>Support our temple through your generous donations</p>
+      </div>
+
+      <div class="temple-image-wrapper">
+        <img
+          src="./assets/img/banner/website.png"
+          width="400px"
+          alt="Varahi Temple"
+        />
+      </div>
+
+      <div class="donation-form-wrapper">
+        <h2>Make a Donation</h2>
+        <p>
+          Please fill in the details below to make your contribution to Sri
+          Varahi Temple.
+        </p>
+
+        <form id="donation-form">
+          <div class="donation-field">
+            <label class="donation-label" for="name">Full Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="donation-input"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+
+          <div class="donation-field">
+            <label class="donation-label" for="mobile">Mobile Number</label>
+            <input
+              type="tel"
+              id="mobile"
+              name="mobile"
+              class="donation-input"
+              placeholder="Enter your mobile number"
+              required
+            />
+          </div>
+
+          <div class="donation-field">
+            <label class="donation-label" for="email">Email Address</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="donation-input"
+              placeholder="Enter your email address"
+              required
+            />
+          </div>
+
+          <div class="donation-field">
+            <label class="donation-label" for="amount"
+              >Donation Amount (₹)</label
+            >
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              class="donation-input"
+              placeholder="Enter donation amount"
+              min="1"
+              required
+            />
+          </div>
+
+          <button
+            type="button"
+            id="pay-button"
+            class="donation-button"
+            onclick="payNow()"
+          >
+            Make Donation
+          </button>
+        </form>
+
+        <div id="payment-response" class="donation-response"></div>
+      </div>
+    </div>
+    <footer class="sigma_footer footer-2">
+      <!-- Middle Footer -->
+      <div class="sigma_footer-middle">
+        <div class="container">
+          <div class="row d-flex justify-content-center align-items-start">
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 footer-widget">
+              <h5 class="widget-title">About Us</h5>
+              <p class="mb-4">Jai Varahi Peedum</p>
+              <div
+                class="d-flex align-items-center justify-content-md-start justify-content-center mt-2"
+              >
+                <span
+                  ><i class="fa-solid fa-map-marker custom-primary me-3"></i>
+                  29, Sri Kottai Varahi Amman temple street <br />
+                  Arumparuthi, Katpadi, <br />
+                  Vellore, 632106.
+                </span>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-md-start justify-content-center"
+              >
+                <i class="fa-solid fa-phone custom-primary me-3"></i>
+                <span>+91 90928 78389</span>
+              </div>
+              <div
+                class="d-flex align-items-center justify-content-md-start justify-content-center mt-2"
+              >
+                <i class="fa-solid fa-envelope custom-primary me-3"></i>
+                <span>varahikottai@gmail.com</span>
+              </div>
+            </div>
+
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 footer-widget">
+              <h5 class="widget-title">Information</h5>
+              <ul>
+                <li>
+                  <i class="fas fa-om"></i>
+                  <a href="./index.html">Home</a>
+                </li>
+                <li>
+                  <i class="fas fa-om"></i>
+                  <a href="./about.html">About Us</a>
+                </li>
+                <li>
+                  <i class="fas fa-om"></i>
+                  <a href="./payment.html">Donation</a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 footer-widget">
+              <img
+                src="./assets/img/banner/header-1.png"
+                alt=""
+                width="100%"
+                height="70%"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-down">
+        <div class="container-fluid">
+          <div class="row footer-alignment">
+            <div class="col-lg-4 d-flex justify-content-center">
+              <a href="./index.html"
+                ><div
+                  class="sigma_footer-logo d-flex align-items-center justify-content-center"
+                >
+                  <img
+                    style="padding: 0 10px"
+                    src="assets/img/varahi.png"
+                    alt="logo"
+                    width="90px"
+                  />
+                  <h4 class="text-center pt-3">Jai Varahi Peedum</h4>
+                </div></a
+              >
+            </div>
+            <div class="col-lg-4">
+              <div
+                class="footer-icons d-flex justify-content-center align-items-center"
+              >
+                <ul class="sigma_sm square light">
+                  <li>
+                    <a
+                      target="_blank"
+                      href="https://www.facebook.com/PallurVarahiDhasan"
+                    >
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="https://www.instagram.com/jai_varahi_peedam?igsh=bmhqcWtiYXlnc25p"
+                    >
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      target="_blank"
+                      href="https://www.youtube.com/@kottaivarahiTV"
+                    >
+                      <i class="fab fa-youtube"></i>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-4 d-flex justify-content-center">
+              <div class="sigma_footer-copyright">
+                <p>Copyrights © Jai Varahi Peedum - 2025</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid py-3 pb-4">
+          <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-lg-6 col-md-12 col-sm-12 px-3">
+              <div
+                class="term-container d-flex justify-content-around align-items-center flex-column flex-md-row flex-sm-row"
+              >
+                <a href="./terms-condition.html">Terms and Conditions</a>
+                <a href="./cancellation-refund.html">Cancellation and Refund</a>
+                <a href="./shipping-delivery.html">Shipping and Delivery</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Global variable to store the Razorpay key
+      let razorpayKeyId;
+
+      // Fetch the Razorpay key when the page loads
+      //   window.addEventListener("DOMContentLoaded", async () => {
+      //     try {
+      //       const response = await fetch("/get-razorpay-key");
+      //       const data = await response.json();
+      //       razorpayKeyId = data.key_id;
+      //       console.log("Razorpay key loaded successfully");
+      //     } catch (error) {
+      //       console.error("Error fetching Razorpay key:", error);
+      //       showMessage(
+      //         "Failed to initialize payment system. Please try again later.",
+      //         "error"
+      //       );
+      //     }
+      //   });
+
+      async function payNow() {
+        // Validate the form
+        const name = document.getElementById("name").value;
+        const mobile = document.getElementById("mobile").value;
+        const email = document.getElementById("email").value;
+        const amount = document.getElementById("amount").value;
+
+        if (!name || !mobile || !email || !amount || amount <= 0) {
+          showMessage(
+            "Please fill all required fields with valid information",
+            "error"
+          );
+          return;
+        }
+
+        // Show loading state
+        const payButton = document.getElementById("pay-button");
+        payButton.disabled = true;
+        payButton.innerText = "Processing...";
+
+        try {
+          console.log(`Creating order for amount: ${amount} INR`);
+
+          // Create order by calling the server endpoint
+          const response = await fetch("/create-order", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              amount,
+              currency: "INR",
+              receipt: `receipt_${Date.now()}`,
+              notes: {
+                source: "varahi_temple_donation",
+                donor_name: name,
+                donor_email: email,
+                donor_mobile: mobile,
+              },
+            }),
+          });
+
+          if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(
+              `Server error: ${errorData.error || response.statusText}`
+            );
+          }
+
+          const order = await response.json();
+          console.log("Order created:", order);
+
+          if (!order.id) {
+            throw new Error("No order ID received from server");
+          }
+
+          // Configure Razorpay options
+          const options = {
+            key: razorpayKeyId,
+            amount: order.amount,
+            currency: order.currency,
+            name: "Sri Varahi Temple",
+            description: "Donation",
+            order_id: order.id,
+            image: "/api/placeholder/100/100", // Temple logo
+            handler: function (response) {
+              console.log("Payment success response:", response);
+              verifyPayment(response, name, email, mobile, amount);
+            },
+            prefill: {
+              name: name,
+              email: email,
+              contact: mobile,
+            },
+            notes: {
+              purpose: "Temple Donation",
+            },
+            theme: {
+              color: "#ff9933",
+            },
+          };
+
+          console.log("Initializing Razorpay with options:", {
+            ...options,
+            key: "[HIDDEN]",
+          });
+
+          // Create Razorpay instance
+          const rzp = new Razorpay(options);
+
+          // Handle payment failures
+          rzp.on("payment.failed", function (response) {
+            console.error("Payment failed response:", response.error);
+            showMessage(
+              `Payment failed: ${response.error.description}`,
+              "error"
+            );
+            resetButton();
+          });
+
+          // Open Razorpay payment form
+          console.log("Opening Razorpay payment form");
+          rzp.open();
+        } catch (error) {
+          console.error("Error in payment process:", error);
+          showMessage(`Error: ${error.message}`, "error");
+          resetButton();
+        }
+      }
+
+      // Function to verify payment with the server
+      async function verifyPayment(response, name, email, mobile, amount) {
+        try {
+          console.log("Verifying payment with server:", response);
+
+          // Add donor details to the verification request
+          const verificationData = {
+            ...response,
+            donor_details: {
+              name: name,
+              email: email,
+              mobile: mobile,
+              amount: amount,
+            },
+          };
+
+          const verificationResponse = await fetch("/verify-payment", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(verificationData),
+          });
+
+          const data = await verificationResponse.json();
+
+          if (data.success) {
+            console.log("Payment verified successfully");
+            showMessage(
+              "Thank you for your generous donation to Sri Varahi Temple! Your receipt has been emailed to you.",
+              "success"
+            );
+            document.getElementById("donation-form").style.display = "none";
+          } else {
+            console.error("Payment verification failed:", data);
+            showMessage(
+              `Payment verification failed: ${data.message || "Unknown error"}`,
+              "error"
+            );
+          }
+        } catch (error) {
+          console.error("Error verifying payment:", error);
+          showMessage(
+            "Error verifying payment. Please contact support.",
+            "error"
+          );
+        } finally {
+          resetButton();
+        }
+      }
+
+      // Helper function to display messages
+      function showMessage(message, type) {
+        const responseElement = document.getElementById("payment-response");
+        responseElement.innerText = message;
+        responseElement.style.display = "block";
+
+        // Remove existing classes
+        responseElement.classList.remove("success", "error");
+
+        // Add the appropriate class
+        if (type === "success") {
+          responseElement.classList.add("success");
+        } else if (type === "error") {
+          responseElement.classList.add("error");
+        }
+      }
+
+      // Reset the button state
+      function resetButton() {
+        const payButton = document.getElementById("pay-button");
+        payButton.disabled = false;
+        payButton.innerText = "Make Donation";
+      }
+    </script>
+  </body>
+</html>

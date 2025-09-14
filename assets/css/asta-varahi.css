@@ -1,0 +1,560 @@
+@import url("https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&family=Fredericka+the+Great&family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.londrina-sketch-regular {
+  font-size: 60px;
+  font-family: "Londrina Sketch", sans-serif;
+  font-weight: 800;
+  font-style: oblique;
+}
+.fredericka-the-great-regular {
+  font-family: "Fredericka the Great", serif;
+  font-weight: 600;
+  font-style: oblique;
+  color: #1e6328;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #fff;
+}
+.content-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+  background-color: #fff;
+  margin: 20px auto;
+  max-width: 1200px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.text-content {
+  flex: 1;
+  padding-right: 20px;
+}
+.text-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #002c09;
+}
+.text-content h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #555;
+}
+.text-content p {
+  text-align: justify;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.6;
+}
+.cta-cont {
+  display: flex;
+  justify-content: center;
+}
+.cta-button {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  color: #fff;
+}
+.video-content-about-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* Main container */
+.jv-brand-showcase {
+  margin: 40px auto;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 10px;
+  touch-action: pan-y; /* Optimize for touch gestures */
+  user-select: none; /* Prevent text selection during swipe */
+}
+
+/* Slider container */
+.jv-brand-slider {
+  display: flex;
+  width: 400%; /* Will be calculated by JS based on number of items */
+  transition: transform 0.3s ease-out; /* For smooth manual sliding */
+}
+
+.jv-brand-showcase:hover .jv-brand-slider,
+.jv-brand-slider.swiping {
+  animation-play-state: paused;
+}
+
+/* Individual brand card */
+.jv-brand-card {
+  flex: 1;
+  min-width: 25%; /* Will be calculated by JS */
+  padding: 30px;
+  border-right: 1px solid #eaeaea;
+  display: flex;
+  align-items: center;
+}
+
+.jv-brand-logo {
+  width: 225px;
+  height: 225px;
+  object-fit: contain;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.jv-brand-content {
+  flex-grow: 1;
+}
+
+.jv-brand-title {
+  font-size: 20px;
+  color: #355e3b;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.jv-brand-description {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.jv-brand-cta {
+  display: inline-block;
+  margin-top: 10px;
+  color: #355e3b;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.jv-brand-cta:hover {
+  color: #1a2e1e;
+  text-decoration: underline;
+}
+
+/* Animation keyframes */
+@keyframes jv-slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Will be adjusted by JS */
+  }
+}
+
+/* Initial animation properties */
+.jv-brand-slider {
+  animation: jv-slide 35s linear infinite;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .jv-brand-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .jv-brand-logo {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .londrina-sketch-regular {
+    font-size: 35px;
+  }
+  .cta-cont .cta-button {
+    font-size: 14px;
+  }
+}
+.header-varahi h5 {
+  color: black;
+  font-weight: 600;
+}
+.row-equal-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-equal-height > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+
+.event-card {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%; /* Make all cards take full height of their container */
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  /* overflow: hidden; */
+  /* align-items: stretch; */
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.event-card img {
+  width: 100%;
+  height: 350px;
+  object-fit:cover ;
+}
+
+.event-card .card-body {
+  padding: 15px;
+  background-color: #fff;
+}
+
+.event-card .card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0;
+  color: #333;
+  font-weight: 600;
+}
+
+.day-head {
+  text-align: center;
+  margin-bottom: 30px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #db4242;
+  display: inline-block;
+}
+.day-event {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .event-card .card-title {
+    font-size: 1rem;
+  }
+}
+/*  */
+#our-impacts {
+  background-color: #f8f9fa;
+}
+
+.heading-underline {
+  height: 3px;
+  width: 70px;
+  background-color: #5c2e85;
+  margin-top: 15px;
+  margin-bottom: 25px;
+}
+
+.impact-intro {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+.impact-card {
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.impact-card:hover {
+  transform: translateY(-5px);
+}
+
+.impact-card-header {
+  background-color: #5c2e85;
+  color: white;
+  padding: 15px 0 0;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.impact-card-header h2 {
+  color: white;
+}
+.impact-card-header.success {
+  background-color: #28a745;
+}
+
+.impact-card-body {
+  padding: 20px;
+  background-color: white;
+}
+
+.impact-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.impact-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+}
+
+.impact-list li:last-child {
+  border-bottom: none;
+}
+
+.impact-list li i {
+  color: #5c2e85;
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.impact-list.success li i {
+  color: #28a745;
+}
+.impact-stat h3 {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+.impact-image {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.impact-image img {
+  transition: transform 0.5s;
+  width: 100%;
+  height: 18rem;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.impact-image:hover img {
+  transform: scale(1.05);
+}
+
+.image-caption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(133, 46, 46, 0.8);
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+.testimonial-card {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  height: 100%;
+  transition: transform 0.3s;
+}
+
+.testimonial-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+}
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-content {
+  margin-bottom: 20px;
+  font-style: italic;
+  color: #555;
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+}
+
+.author-avatar {
+  margin-right: 15px;
+}
+
+.author-info h4 {
+  margin-bottom: 0;
+  color: #5c2e85;
+  font-size: 1.1rem;
+}
+
+.author-info p {
+  margin-bottom: 0;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.impact-cta {
+  background-color: rgb(133, 46, 46);
+  color: white;
+  padding: 40px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+.impact-cta h2 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+.impact-cta p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+}
+
+.btn-primary {
+  background-color: #ff9500;
+  border-color: #ff9500;
+  padding: 10px 25px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn-primary:hover {
+  background-color: #e08600;
+  border-color: #e08600;
+}
+
+.testimonial-content p {
+  color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .impact-intro {
+    font-size: 1rem;
+    padding: 5px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .testimonial-card {
+    margin-bottom: 20px;
+  }
+}
+/* Counter */
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.stat-card {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  width: 240px;
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+  height: 70px;
+  width: 70px;
+  margin: 0 auto 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 35px;
+  border-radius: 50%;
+}
+
+.trees-icon {
+  background: rgba(76, 175, 80, 0.15);
+  color: #4caf50;
+}
+
+.visitors-icon {
+  background: rgba(33, 150, 243, 0.15);
+  color: #2196f3;
+}
+
+.families-icon {
+  background: rgba(255, 152, 0, 0.15);
+  color: #ff9800;
+}
+
+.vendors-icon {
+  background: rgba(156, 39, 176, 0.15);
+  color: #9c27b0;
+}
+
+.stat-counter {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 5px;
+  line-height: 1.2;
+}
+
+.trees-counter {
+  color: #4caf50;
+}
+
+.visitors-counter {
+  color: #2196f3;
+}
+
+.families-counter {
+  color: #ff9800;
+}
+
+.vendors-counter {
+  color: #9c27b0;
+}
+
+.stat-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #6c757d;
+  margin-top: 8px;
+}
+
+@media (max-width: 768px) {
+  .stats-container {
+    gap: 20px;
+  }
+
+  .stat-card {
+    width: calc(50% - 10px);
+    padding: 20px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stat-card {
+    width: 100%;
+  }
+}
