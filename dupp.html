@@ -1,123 +1,167 @@
+
+
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>3 Days Agenda</title>
-  <style>
-    :root {
-      --primary-color: #9a3b34;
-      --secondary-color: #663333;
-      --accent-color: #e85a4f;
-      --text-color: #333;
-      --background-light: #f8f8f8;
-      --background-medium: #f2f2f2;
-      --background-dark: #fffaf0;
-    }
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jai Varahi peedam</title>
 
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/img/varahi.png"
+    />
 
-    .agenda-section {
-      /* max-width: 1200px; */
-      margin: 50px auto;
-      padding: 20px;
-      text-align: center;
-    }
+    <!-- partial:partial/__stylesheets.html -->
+    <link rel="stylesheet" href="assets/css/plugins/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/animate.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick.css" />
+    <link rel="stylesheet" href="assets/css/plugins/slick-theme.css" />
+    <link rel="stylesheet" href="assets/css/plugins/ion.rangeSlider.min.css" />
 
-    .agenda-section h2 {
-      font-size: 32px;
-      margin-bottom: 40px;
-      color: var(--primary-color);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
+    <!-- Icon Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      integrity="sha512-sV7ZfTY8AxRXB6ZB03i6QZQsFpi3+hc1alC+Tzj9QnV0E3h0xRTci0hGhPfFlV9lmXpB+aQqEYUZoKaNf0lFfA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-    .agenda-cards {
-      display: flex;
-      gap: 25px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/plugins/font-awesome.min.css" />
+    <!-- Template Style sheet -->
+    <link rel="stylesheet" href="assets/css/asta-varahi.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/about.css" />
+    <!-- partial -->
+  </head>
 
-    .agenda-card {
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
-      padding: 25px 20px;
-      width: 350px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-    }
+  <body>
 
-    .agenda-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 12px 24px rgba(0,0,0,0.18);
-    }
+  <div class="section section-padding">
+      <div class="container">
+        <div class="section-title text-start">
+          <p class="subtitle">Portfolio</p>
+          <h4 class="title">Puja</h4>
+        </div>
 
-    .agenda-card h3 {
-      background: var(--primary-color);
-      color: #fff;
-      padding: 12px;
-      border-radius: 8px;
-      font-size: 20px;
-      margin-bottom: 20px;
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
+        <div class="text-center filter-items left">
+          <h5 class="active portfolio-trigger" data-filter="*">All</h5>
+          <h5 class="portfolio-trigger" data-filter=".coaching">Amavasai</h5>
+          <h5 class="portfolio-trigger" data-filter=".stakeholder">Pournami</h5>
+          <h5 class="portfolio-trigger" data-filter=".strategy">Panchami</h5>
+          <h5 class="portfolio-trigger" data-filter=".relations">Astami</h5>
+        </div>
 
-    .agenda-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-    }
+        <div class="portfolio-filter row">
+          <div class="col-lg-4 coaching disabled-link">
+            <div class="sigma_portfolio-item style-2">
+              <img src="assets/img/puja/style-2/1.jpg" alt="portfolio" />
+              <div class="sigma_portfolio-item-content">
+                <div class="sigma_portfolio-item-content-inner">
+                  <h5>
+                    <a href="#" class="disabled-link"> Amavasai </a>
+                  </h5>
+                </div>
+                <a href="#" class="disabled-link"
+                  ><i class="fa-solid fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 stakeholder disabled-link">
+            <div class="sigma_portfolio-item style-2">
+              <img src="assets/img/puja/style-2/2.jpg" alt="portfolio" />
+              <div class="sigma_portfolio-item-content">
+                <div class="sigma_portfolio-item-content-inner">
+                  <h5><a href="#"> Pournami </a></h5>
+                </div>
+                <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 strategy disabled-link">
+            <div class="sigma_portfolio-item style-2">
+              <img src="assets/img/puja/style-2/3.jpg" alt="portfolio" />
+              <div class="sigma_portfolio-item-content">
+                <div class="sigma_portfolio-item-content-inner">
+                  <h5>
+                    <a href="#"> Valar Pirai Panchami</a>
+                  </h5>
+                </div>
+                <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 strategy disabled-link">
+            <div class="sigma_portfolio-item style-2">
+              <img src="assets/img/puja/style-2/4.jpg" alt="portfolio" />
+              <div class="sigma_portfolio-item-content">
+                <div class="sigma_portfolio-item-content-inner">
+                  <h5><a href="#"> Teay Pirai Panchami</a></h5>
+                </div>
+                <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 relations disabled-link">
+            <div class="sigma_portfolio-item style-2">
+              <img src="assets/img/puja/style-2/5.jpg" alt="portfolio" />
+              <div class="sigma_portfolio-item-content">
+                <div class="sigma_portfolio-item-content-inner">
+                  <h5><a href="#"> Valar Pirai Astami </a></h5>
+                </div>
+                <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 relations disabled-link">
+            <div class="sigma_portfolio-item style-2">
+              <img src="assets/img/puja/style-2/6.jpg" alt="portfolio" />
+              <div class="sigma_portfolio-item-content">
+                <div class="sigma_portfolio-item-content-inner">
+                  <h5>
+                    <a href="#"> Teay Pirai Astami</a>
+                  </h5>
+                </div>
+                <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-    .agenda-list li {
-      margin-bottom: 14px;
-      padding: 12px 15px;
-      background: var(--background-medium);
-      border-left: 5px solid var(--primary-color);
-      border-radius: 6px;
-      font-size: 15px;
-      display: flex;
-      align-items: flex-start;
-      line-height: 1.4;
-    }
+  </body>
 
-    .agenda-time {
-      font-weight: 600;
-      color: var(--primary-color);
-      margin-right: 10px;
-      min-width: 140px;
-      display: inline-block;
-    }
+        <!-- partial:partia/__scripts.html -->
+    <script src="assets/js/plugins/jquery-3.4.1.min.js"></script>
+    <script src="assets/js/plugins/popper.min.js"></script>
+    <script src="assets/js/plugins/bootstrap.min.js"></script>
+    <script src="assets/js/plugins/imagesloaded.min.js"></script>
+    <script src="assets/js/plugins/jquery.magnific-popup.min.js"></script>
+    <script src="assets/js/plugins/jquery.countdown.min.js"></script>
+    <script src="assets/js/plugins/jquery.waypoints.min.js"></script>
+    <script src="assets/js/plugins/jquery.counterup.min.js"></script>
+    <script src="assets/js/plugins/jquery.zoom.min.js"></script>
+    <script src="assets/js/plugins/jquery.inview.min.js"></script>
+    <script src="assets/js/plugins/jquery.event.move.js"></script>
+    <script src="assets/js/plugins/wow.min.js"></script>
+    <script src="assets/js/plugins/isotope.pkgd.min.js"></script>
+    <script src="assets/js/plugins/slick.min.js"></script>
+    <script src="assets/js/plugins/ion.rangeSlider.min.js"></script>
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .agenda-card {
-        width: 100%;
-        max-width: 500px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .agenda-cards {
-        flex-direction: column;
-        align-items: center;
-      }
-      .agenda-time {
-        min-width: 120px;
-        font-size: 14px;
-      }
-    }
-  </style>
-</head>
-<body>
-
-
-
-</body>
+    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/demo.js"></script>
+    <!-- partial -->
+  </body>
 </html>

@@ -10300,3 +10300,43 @@ small {
   text-decoration: none;
   cursor: auto;
 }
+
+/* sroll new updation */
+ .jv-scroll-container {
+      width: 100%;
+      overflow: hidden;
+      background: #fff;
+      /* padding: 20px 0; */
+      position: relative;
+      white-space: nowrap;
+    }
+
+    /* Track */
+    .jv-scroll-track {
+      display: flex;
+      width: max-content;
+      animation: jv-scroll 20s linear infinite;
+    }
+
+    /* Each item */
+    .jv-scroll-item {
+      flex: 0 0 auto;
+      /* margin: 0 20px; */
+    }
+
+    .jv-scroll-item img {
+      height: 90px;
+      width: auto;
+      /* border-radius: 12px; */
+      display: block;
+    }
+
+    /* Keyframes for infinite scroll */
+    @keyframes jv-scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
